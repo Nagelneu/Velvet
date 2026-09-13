@@ -90,7 +90,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: scale(1.18);
+            transform: scale(1.45);
             display: block;
         }
 
@@ -187,7 +187,6 @@
             filter: sepia(20%) hue-rotate(300deg) saturate(70%);
         }
 
-        /* Einheitliches 4er-Raster mit exakten Abständen */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -401,11 +400,72 @@
             font-weight: 500;
             transition: color 0.3s;
             letter-spacing: 0.5px;
+            cursor: pointer;
         }
 
         .footer-links a:hover {
             color: var(--accent-gold);
             text-decoration: underline;
+        }
+
+        /* Modal Styles für AGB, Impressum und Datenschutz */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(14, 3, 6, 0.85);
+            backdrop-filter: blur(5px);
+            overflow-y: auto;
+            padding: 2rem 1rem;
+            box-sizing: border-box;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            border: 1px solid var(--accent-gold);
+            border-radius: 16px;
+            max-width: 750px;
+            margin: 4vh auto;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lux);
+            color: var(--text-main);
+            position: relative;
+            text-align: left;
+        }
+
+        .modal-content h2 {
+            color: var(--accent-gold);
+            font-family: 'Playfair Display', serif;
+            margin-top: 0;
+        }
+
+        .modal-content p, .modal-content li {
+            color: var(--text-muted);
+            font-weight: 300;
+            font-size: 0.98rem;
+        }
+
+        .modal-content strong {
+            color: var(--accent-gold-light);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.8rem;
+            font-size: 2rem;
+            color: var(--accent-gold);
+            cursor: pointer;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+
+        .close-btn:hover {
+            color: var(--text-main);
         }
 
         @media (max-width: 768px) {
@@ -422,6 +482,10 @@
             header h1 {
                 font-size: 2.2rem;
             }
+            .modal-content {
+                padding: 1.5rem;
+                margin: 2vh auto;
+            }
         }
     </style>
 </head>
@@ -432,7 +496,7 @@
             <img src="logo.png.jpg" alt="Smooth Velvet Talk Logo">
         </div>
         <h1>Smooth Velvet Talk</h1>
-        <p>Die Magie der Stimme – Berührende Voice-Overs, maßgeschneiderte Meditationen und emotionale Audioprojekte auf absolutem Premium-Niveau.</p>
+        <p>Die Magie der Stimme – Berührende Voice-Over, maßgeschneiderte Meditationen und emotionale Audioprojekte auf absolutem Premium-Niveau.</p>
     </header>
 
     <div class="container">
@@ -540,12 +604,11 @@
             </div>
         </div>
 
-        <!-- ECHTES FORMULAR MIT AUTOMATISCHEM VERSAND AN eurodeko@web.de -->
+        <!-- FORMULAR MIT FORMSPREE AN eurodeko@web.de -->
         <div class="card">
             <h2 class="section-title" style="margin-top:0; font-size: 1.8rem;">Individuelles Projekt anfragen</h2>
             <p style="text-align: center; color: var(--text-muted); margin-bottom: 2.5rem; font-weight: 300;">Haben Sie spezielle Wünsche? Füllen Sie das Formular aus und senden Sie Ihre Anfrage direkt per E-Mail an eurodeko@web.de oder per WhatsApp an uns.</p>
             
-            <!-- WICHTIG: Ersetze DEINE_FORM_ID mit deiner ID von formspree.io -->
             <form action="https://formspree.io/f/DEINE_FORM_ID" method="POST">
                 <div class="form-group">
                     <label for="clientName">Ihr Name</label>
@@ -581,12 +644,50 @@
         <div class="footer-links">
             <a href="mailto:eurodeko@web.de">📧 E-Mail: eurodeko@web.de</a>
             <a href="javascript:void(0);" onclick="sendWhatsAppQuick()">💬 WhatsApp Support</a>
-            <a href="agb.html" target="_blank">📄 AGB</a>
-            <a href="impressum.html" target="_blank">⚖️ Impressum</a>
-            <a href="datenschutz.html" target="_blank">🔒 Datenschutz</a>
+            <a onclick="openModal('agbModal')">📄 AGB</a>
+            <a onclick="openModal('impressumModal')">⚖️ Impressum</a>
+            <a onclick="openModal('datenschutzModal')">🔒 Datenschutz</a>
         </div>
         <p>&copy; 2026 Smooth Velvet Talk. Alle Rechte vorbehalten. | Professionelle Audio- & Voice-Over-Produktionen.</p>
     </footer>
+
+    <!-- MODAL: AGB -->
+    <div id="agbModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('agbModal')">&times;</span>
+            <h2>Allgemeine Geschäftsbedingungen (AGB)</h2>
+            <p><strong>1. Geltungsbereich</strong><br>Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge über Sprechertätigkeiten, Sprachaufnahmen, Audio-Produktionen und digitale Dienstleistungen (wie Voice-Messages, Meditationen oder kommerzielle Voice-Overs) über die Website <em>Smooth Velvet Talk</em>.</p>
+            <p><strong>2. Vertragsschluss</strong><br>Der Vertrag kommt entweder durch die Buchung über unseren externen Zahlungsanbieter (z. B. Digistore24) oder durch eine individuelle Auftragsbestätigung per E-Mail an <em>eurodeko@web.de</em> zustande.</p>
+            <p><strong>3. Leistungsumfang und Nutzungsrechte</strong><br>Der genaue Umfang der Audio-Produktion ergibt sich aus der jeweiligen Produktbeschreibung oder individuellen Vereinbarung. Sofern nicht anders vereinbart, erwirbt der Kunde mit vollständiger Bezahlung das einfache, nicht übertragbare Nutzungsrecht für den vertraglich vereinbarten Zweck.</p>
+            <p><strong>4. Preise und Zahlungsbedingungen</strong><br>Es gelten die zum Zeitpunkt der Bestellung angegebenen Preise. Die Zahlung erfolgt über die angebotenen Zahlungswege (z. B. Digistore24).</p>
+            <p><strong>5. Widerrufsrecht</strong><br>Bei digitalen Inhalten oder individuell für den Kunden angefertigten Sprachaufnahmen erlischt das Widerrufsrecht vorzeitig, wenn mit der Ausführung der Dienstleistung nach ausdrücklicher Zustimmung des Kunden begonnen wurde.</p>
+        </div>
+    </div>
+
+    <!-- MODAL: Impressum -->
+    <div id="impressumModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('impressumModal')">&times;</span>
+            <h2>Impressum</h2>
+            <p><strong>Angaben gemäß § 5 TMG:</strong><br>[Dein vollständiger Vor- und Nachname]<br>[Deine Straße und Hausnummer]<br>[Deine PLZ und Ort]<br>Deutschland</p>
+            <p><strong>Kontakt:</strong><br>E-Mail: eurodeko@web.de</p>
+            <p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>[Dein Vor- und Nachname]<br>[Anschrift wie oben]</p>
+            <p><strong>EU-Streitbeilegung:</strong> Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" style="color:var(--accent-gold)">https://ec.europa.eu/consumers/odr/</a>.</p>
+        </div>
+    </div>
+
+    <!-- MODAL: Datenschutz -->
+    <div id="datenschutzModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('datenschutzModal')">&times;</span>
+            <h2>Datenschutzerklärung</h2>
+            <p><strong>1. Datenschutz auf einen Blick</strong><br>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.</p>
+            <p><strong>2. Hosting</strong><br>Diese Website wird extern gehostet (z. B. über GitHub Pages). Hoster-Datenerfassungen umfassen u.a. IP-Adressen und Verbindungsdaten.</p>
+            <p><strong>3. Datenerfassung & Formulare (Formspree)</strong><br>Wenn Sie uns per Formular Anfragen senden, werden Ihre Angaben inklusive Kontaktdaten (an <em>eurodeko@web.de</em>) zwecks Bearbeitung der Anfrage gespeichert.</p>
+            <p><strong>4. Zahlungsabwicklung (Digistore24)</strong><br>Für die Zahlungsabwicklung nutzen wir den Anbieter Digistore24. Es gelten deren Datenschutzbestimmungen.</p>
+            <p><strong>5. Ihre Rechte</strong><br>Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung.</p>
+        </div>
+    </div>
 
     <script>
         function sendWhatsApp() {
@@ -607,6 +708,22 @@
             const phone = "491700000000"; 
             const text = encodeURIComponent(`Hallo Smooth Velvet Talk Team, ich habe eine Frage zu euren Angeboten.`);
             window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+        }
+
+        // Modal Steuerungs-Skript
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        // Schließen bei Klick außerhalb des Fensters
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+            }
         }
     </script>
 </body>
