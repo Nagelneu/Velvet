@@ -22,6 +22,30 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Dezent Noten im Hintergrund (wo keine Texte sind) */
+        body::before {
+            content: "♫ ♪ ♬ ♩ ♪ ♫ ♬ ♩ ♪ ♫ ♬ ♩ ♪ ♫ ♬ ♩";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 4rem;
+            color: var(--accent-gold);
+            opacity: 0.03;
+            z-index: -1;
+            pointer-events: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: space-around;
+            letter-spacing: 15rem;
+            line-height: 15rem;
+            transform: rotate(-15deg);
         }
 
         header {
@@ -29,16 +53,30 @@
             padding: 4rem 1rem 2rem 1rem;
             background: linear-gradient(180deg, #2b0f16 0%, var(--bg-color) 100%);
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
         }
 
-        .logo-container img {
+        /* Perfekt runder Logo-Container mit sauberem Maskierungs-Zoom */
+        .logo-container {
             width: 140px;
             height: 140px;
             border-radius: 50%;
-            object-fit: cover;
+            overflow: hidden;
             border: 2px solid var(--accent-gold);
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
-            margin-bottom: 1.5rem;
+            margin: 0 auto 1.5rem auto;
+            background-color: var(--bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.18); /* Entfernt den äußeren weißen Bildrand restlos */
+            display: block;
         }
 
         h1 {
@@ -60,6 +98,7 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 3rem 1rem;
+            position: relative;
         }
 
         .section-title {
@@ -77,6 +116,7 @@
             padding: 2.5rem;
             margin-bottom: 2rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
         }
 
         /* Bio Section */
@@ -115,7 +155,7 @@
             outline: none;
         }
 
-        /* Pricing Grid -now 4 columns optimized */
+        /* Pricing Grid - 4 columns optimized */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -249,6 +289,7 @@
             text-align: center;
             color: var(--text-muted);
             font-size: 0.9rem;
+            position: relative;
         }
 
         .footer-links {
@@ -310,10 +351,21 @@
             <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">Hören Sie rein und erleben Sie die Facetten von Velvet.</p>
             
             <div class="audio-grid">
-                <div class="audio-item">
-                    <label>1. Sinnlicher Imagefilm (Commercial)</label>
-                    <audio controls><source src="sample1.mp3" type="audio/mpeg">Dein Browser unterstützt kein Audio.</audio>
+                <!-- Sample 1 mit integriertem Text-Skript -->
+                <div class="audio-item" style="grid-column: 1 / -1; background: rgba(35, 10, 16, 0.8); border: 1px solid var(--accent-gold);">
+                    <label style="font-size: 1.1rem; color: var(--accent-gold);">✨ 1. Sinnlicher Imagefilm (Featured Track)</label>
+                    <audio controls style="margin-bottom: 1rem;"><source src="sample1.mp3" type="audio/mpeg">Dein Browser unterstützt kein Audio.</audio>
+                    <div style="background: rgba(20, 5, 9, 0.5); padding: 1rem; border-radius: 6px; border-left: 3px solid var(--accent-gold);">
+                        <p style="margin: 0; font-size: 0.95rem; color: var(--text-main); font-style: italic; line-height: 1.5;">
+                            „Manchmal braucht es nur einen Moment. Ein Atemzug. Ein Blick in die Ferne. Ein Duft, der Erinnerungen weckt.<br>
+                            Willkommen bei Smooth Velvet Talk, wo Eleganz auf Sinnlichkeit trifft.<br>
+                            Spüre die seidige Textur auf deiner Haut. Erlebe den Hauch von Luxus, der dich den ganzen Tag begleitet.<br>
+                            Denn wahre Schönheit beginnt nicht mit dem, was man sieht, sondern mit dem, was man fühlt.<br>
+                            <strong>Smooth Velvet Talk – für Momente, die bleiben.</strong>“
+                        </p>
+                    </div>
                 </div>
+
                 <div class="audio-item">
                     <label>2. Tiefenentspannung & Meditation</label>
                     <audio controls><source src="sample2.mp3" type="audio/mpeg">Dein Browser unterstützt kein Audio.</audio>
@@ -462,7 +514,6 @@
                 alert('Bitte fülle mindestens deinen Namen und deine Nachricht aus.');
                 return;
             }
-            // Ersetze 491700000000 mit der echten WhatsApp-Nummer (ohne +)
             const phone = "491700000000"; 
             const text = encodeURIComponent(`✨ Neue Anfrage über smooth velvet talk ✨\n\n*Name:* ${data.name}\n*Paket:* ${data.service}\n*Details:* ${data.message}`);
             window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
