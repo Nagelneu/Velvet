@@ -3,308 +3,404 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smooth Velvet Talk | Professionelle Voice-Over & Audio-Produktion</title>
+    <title>Smooth Velvet Talk | High-End Voice-Over & Audio-Produktion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #1a080c;
-            --card-bg: #2b0f16;
-            --accent-gold: #d4af37;
-            --accent-gold-light: #f3e5ab;
-            --text-main: #f9f6f0;
-            --text-muted: #b8a3a8;
-            --burgundy: #5c1d29;
+            --bg-deep: #0e0306;
+            --bg-color: #17060a;
+            --card-bg: linear-gradient(145deg, #240a11 0%, #1a060b 100%);
+            --card-hover-bg: linear-gradient(145deg, #2d0d15 0%, #20080e 100%);
+            --accent-gold: #dfb950;
+            --accent-gold-light: #f7e9b7;
+            --accent-gold-dark: #9c7b24;
+            --text-main: #fcf8f2;
+            --text-muted: #c4b0b5;
+            --border-gold: rgba(223, 185, 80, 0.25);
+            --border-gold-glow: rgba(223, 185, 80, 0.6);
+            --shadow-lux: 0 15px 35px rgba(0, 0, 0, 0.6);
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-color);
+            background-color: var(--bg-deep);
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.7;
             position: relative;
             overflow-x: hidden;
         }
 
-        /* Dezent Noten im Hintergrund (wo keine Texte sind) */
+        h1, h2, h3, .price-tag, .logo-container {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Glasklare, edle Musiknoten im Hintergrund */
         body::before {
-            content: "♫ ♪ ♬ ♩ ♪ ♫ ♬ ♩ ♪ ♫ ♬ ♩ ♪ ♫ ♬ ♩";
+            content: "♫ ♪ ♬ ♩ ♪ ♫ ♬ ♩ ♪ ♫ ♬ ♩ ♪ ♫ ♬ ♩ ♫ ♪ ♬ ♩ ♪ ♫ ♬ ♩";
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            font-size: 4rem;
+            font-size: 4.5rem;
             color: var(--accent-gold);
-            opacity: 0.03;
+            opacity: 0.08;
             z-index: -1;
             pointer-events: none;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             align-content: space-around;
-            letter-spacing: 15rem;
-            line-height: 15rem;
-            transform: rotate(-15deg);
+            letter-spacing: 8rem;
+            line-height: 12rem;
+            transform: rotate(-10deg);
         }
 
         header {
             text-align: center;
-            padding: 4rem 1rem 2rem 1rem;
-            background: linear-gradient(180deg, #2b0f16 0%, var(--bg-color) 100%);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 5rem 1rem 3rem 1rem;
+            background: radial-gradient(circle at center top, #320f17 0%, var(--bg-deep) 70%);
+            border-bottom: 1px solid var(--border-gold);
             position: relative;
         }
 
-        /* Perfekt runder Logo-Container mit sauberem Maskierungs-Zoom */
         .logo-container {
-            width: 140px;
-            height: 140px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             overflow: hidden;
             border: 2px solid var(--accent-gold);
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
-            margin: 0 auto 1.5rem auto;
-            background-color: var(--bg-color);
+            box-shadow: 0 0 30px rgba(223, 185, 80, 0.35);
+            margin: 0 auto 1.8rem auto;
+            background-color: var(--bg-deep);
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .logo-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(223, 185, 80, 0.6);
         }
 
         .logo-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: scale(1.18); /* Entfernt den äußeren weißen Bildrand restlos */
+            transform: scale(1.18);
             display: block;
         }
 
-        h1 {
-            font-size: 2.5rem;
+        header h1 {
+            font-size: 2.8rem;
             color: var(--accent-gold);
-            margin: 0 0 0.5rem 0;
-            letter-spacing: 2px;
+            margin: 0 0 0.8rem 0;
+            letter-spacing: 3px;
             text-transform: uppercase;
+            font-weight: 600;
         }
 
         header p {
             color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 600px;
+            font-size: 1.15rem;
+            max-width: 650px;
             margin: 0 auto;
+            font-weight: 300;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1050px;
             margin: 0 auto;
-            padding: 3rem 1rem;
+            padding: 4rem 1.5rem;
             position: relative;
         }
 
         .section-title {
             text-align: center;
             color: var(--accent-gold);
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            letter-spacing: 1px;
+            font-size: 2.2rem;
+            margin-bottom: 2.5rem;
+            letter-spacing: 1.5px;
+            font-weight: 600;
         }
 
         .card {
-            background-color: var(--card-bg);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: var(--card-bg);
+            border: 1px solid var(--border-gold);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-lux);
             position: relative;
+            backdrop-filter: blur(10px);
         }
 
-        /* Bio Section */
         .bio-text {
             color: var(--text-muted);
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             text-align: justify;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
+            font-weight: 300;
         }
 
-        /* Audio Grid for 10 Samples */
+        .bio-text strong {
+            color: var(--accent-gold-light);
+            font-weight: 500;
+        }
+
         .audio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+            gap: 1.8rem;
         }
 
         .audio-item {
-            background: rgba(20, 5, 9, 0.6);
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            padding: 1.2rem;
-            border-radius: 8px;
+            background: rgba(20, 5, 9, 0.7);
+            border: 1px solid rgba(223, 185, 80, 0.15);
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .audio-item:hover {
+            border-color: var(--border-gold);
+            background: rgba(30, 8, 14, 0.85);
+            transform: translateY(-2px);
         }
 
         .audio-item label {
             display: block;
             color: var(--accent-gold-light);
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            font-size: 1.05rem;
+            font-family: 'Playfair Display', serif;
         }
 
         audio {
             width: 100%;
-            height: 35px;
+            height: 40px;
             outline: none;
+            filter: sepia(20%) hue-rotate(300deg) saturate(70%);
         }
 
-        /* Pricing Grid - 4 columns optimized */
+        /* Einheitliches 4er-Raster mit exakten Abständen */
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .price-card {
-            background-color: var(--card-bg);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 12px;
-            padding: 2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-gold);
+            border-radius: 16px;
+            padding: 2.2rem 1.4rem;
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.3s, border-color 0.3s;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: var(--shadow-lux);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
         }
 
         .price-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             border-color: var(--accent-gold);
+            background: var(--card-hover-bg);
+            box-shadow: 0 20px 40px rgba(223, 185, 80, 0.15);
+        }
+
+        .price-card:hover::before {
+            opacity: 1;
         }
 
         .price-card h3 {
             color: var(--text-main);
             margin-top: 0;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            min-height: 2.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .price-tag {
-            font-size: 1.8rem;
+            font-size: 2.1rem;
             color: var(--accent-gold);
-            font-weight: bold;
+            font-weight: 600;
             margin: 1rem 0;
+            text-shadow: 0 2px 10px rgba(223, 185, 80, 0.2);
         }
 
         .price-card p {
             color: var(--text-muted);
             font-size: 0.9rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
+            font-weight: 300;
+            line-height: 1.5;
         }
 
-        /* Form Styling */
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
         }
 
         label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
             color: var(--accent-gold-light);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
         }
 
         input, select, textarea {
             width: 100%;
-            padding: 0.9rem;
-            background-color: #140509;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            background-color: rgba(14, 3, 6, 0.8);
+            border: 1px solid var(--border-gold);
+            border-radius: 10px;
             color: var(--text-main);
             font-size: 1rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             box-sizing: border-box;
+            transition: all 0.3s ease;
         }
 
         input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--accent-gold);
-            box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+            background-color: rgba(22, 5, 10, 0.95);
+            box-shadow: 0 0 15px rgba(223, 185, 80, 0.25);
+        }
+
+        select option {
+            background-color: #1a060b;
+            color: var(--text-main);
         }
 
         .btn-group {
             display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
+            gap: 1.2rem;
+            margin-top: 2.5rem;
             flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
-            padding: 0.9rem 1.5rem;
+            padding: 1rem 1.8rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 1rem;
-            font-weight: bold;
+            font-weight: 600;
             cursor: pointer;
             text-align: center;
             text-decoration: none;
-            transition: background 0.3s, opacity 0.3s;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
         }
 
         .btn-digistore {
-            background-color: var(--accent-gold);
-            color: #1a080c;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, #c59b30 100%);
+            color: #0e0306;
             width: 100%;
             box-sizing: border-box;
             margin-top: auto;
             font-size: 0.9rem;
             padding: 0.8rem 1rem;
+            box-shadow: 0 4px 15px rgba(223, 185, 80, 0.3);
         }
 
         .btn-digistore:hover {
-            background-color: #e5c158;
+            background: linear-gradient(135deg, #f7e9b7 0%, var(--accent-gold) 100%);
+            box-shadow: 0 6px 20px rgba(223, 185, 80, 0.5);
+            transform: translateY(-2px);
         }
 
         .btn-email {
             flex: 1;
-            background-color: var(--accent-gold);
-            color: #1a080c;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, #c59b30 100%);
+            color: #0e0306;
+            box-shadow: 0 4px 15px rgba(223, 185, 80, 0.3);
         }
 
         .btn-email:hover {
-            background-color: #e5c158;
+            background: linear-gradient(135deg, #f7e9b7 0%, var(--accent-gold) 100%);
+            box-shadow: 0 6px 20px rgba(223, 185, 80, 0.5);
+            transform: translateY(-2px);
         }
 
         .btn-whatsapp {
             flex: 1;
-            background-color: #25d366;
-            color: white;
+            background: linear-gradient(135deg, #421822 0%, #2b0f16 100%);
+            color: var(--accent-gold-light);
+            border: 1px solid var(--accent-gold);
+            box-shadow: 0 4px 15px rgba(223, 185, 80, 0.15);
         }
 
         .btn-whatsapp:hover {
-            background-color: #1ebd5b;
+            background: linear-gradient(135deg, #5c2230 0%, #38131d 100%);
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+            box-shadow: 0 6px 20px rgba(223, 185, 80, 0.3);
+            transform: translateY(-2px);
         }
 
-        /* Footer Bottom Links Section */
         footer {
-            background-color: #140509;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 3rem 1rem;
+            background-color: #090103;
+            border-top: 1px solid var(--border-gold);
+            padding: 3.5rem 1.5rem;
             text-align: center;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             position: relative;
         }
 
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
+            gap: 2.5rem;
+            margin-bottom: 2rem;
             flex-wrap: wrap;
         }
 
         .footer-links a {
             color: var(--accent-gold-light);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
             transition: color 0.3s;
+            letter-spacing: 0.5px;
         }
 
         .footer-links a:hover {
@@ -321,7 +417,10 @@
             }
             .footer-links {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 1.2rem;
+            }
+            header h1 {
+                font-size: 2.2rem;
             }
         }
     </style>
@@ -333,35 +432,32 @@
             <img src="logo.png.jpg" alt="Smooth Velvet Talk Logo">
         </div>
         <h1>Smooth Velvet Talk</h1>
-        <p>Die Magie der Stimme – Berührende Voice-Overs, maßgeschneiderte Meditationen und emotionale Audioprojekte auf höchstem Niveau.</p>
+        <p>Die Magie der Stimme – Berührende Voice-Overs, maßgeschneiderte Meditationen und emotionale Audioprojekte auf absolutem Premium-Niveau.</p>
     </header>
 
     <div class="container">
         
-        <!-- Über Velvet Sektion -->
         <div class="card">
-            <h2 class="section-title" style="margin-top:0; font-size: 1.5rem;">Über Velvet – Die Stimme, die berührt</h2>
-            <p class="bio-text">Manchmal braucht es keine Bilder, um Welten entstehen zu lassen – nur den richtigen Ton. Hinter <strong>Smooth Velvet Talk</strong> steht eine Stimme, die durch ihre unvergleichliche Wärme, Tiefe und samtige Textur sofort eine emotionale Verbindung zum Zuhörer aufbaut.</p>
+            <h2 class="section-title" style="margin-top:0; font-size: 1.8rem;">Über Velvet – Die Stimme, die berührt</h2>
+            <p class="bio-text">Manchmal braucht es keine Bilder, um Welten entstehen zu lassen – nur den richtigen Ton. Hinter <strong>Smooth Velvet Talk</strong> steht eine Stimme, die durch ihre unvergleichliche Wärme, Tiefe und samtige Textur sofort eine tiefe, emotionale Verbindung zum Zuhörer aufbaut.</p>
             <p class="bio-text" style="margin-bottom: 0;">Egal ob beruhigende Meditationen, tiefgründige Affirmationen, sinnliche Imagefilme oder professionelle Creator-Voice-Overs: Velvet versteht es, Worte mit Seele zu füllen und Botschaften unvergesslich zu machen. Lassen Sie sich verzaubern und geben Sie Ihrem Projekt den feinen, edlen Schliff.</p>
         </div>
 
-        <!-- 10 Sprachmuster (Audio-Galerie) -->
         <div class="card">
-            <h2 class="section-title" style="margin-top:0; font-size: 1.5rem;">Hörproben-Galerie (10 Stile)</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">Hören Sie rein und erleben Sie die Facetten von Velvet.</p>
+            <h2 class="section-title" style="margin-top:0; font-size: 1.8rem;">Hörproben-Galerie (10 Stile)</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2.5rem; font-weight: 300;">Hören Sie rein und erleben Sie die luxuriösen Facetten von Velvet.</p>
             
             <div class="audio-grid">
-                <!-- Sample 1 mit integriertem Text-Skript -->
-                <div class="audio-item" style="grid-column: 1 / -1; background: rgba(35, 10, 16, 0.8); border: 1px solid var(--accent-gold);">
-                    <label style="font-size: 1.1rem; color: var(--accent-gold);">✨ 1. Sinnlicher Imagefilm (Featured Track)</label>
-                    <audio controls style="margin-bottom: 1rem;"><source src="sample1.mp3" type="audio/mpeg">Dein Browser unterstützt kein Audio.</audio>
-                    <div style="background: rgba(20, 5, 9, 0.5); padding: 1rem; border-radius: 6px; border-left: 3px solid var(--accent-gold);">
-                        <p style="margin: 0; font-size: 0.95rem; color: var(--text-main); font-style: italic; line-height: 1.5;">
+                <div class="audio-item" style="grid-column: 1 / -1; background: rgba(45, 12, 20, 0.85); border: 1px solid var(--accent-gold);">
+                    <label style="font-size: 1.2rem; color: var(--accent-gold);">✨ 1. Sinnlicher Imagefilm (Featured Track)</label>
+                    <audio controls style="margin-bottom: 1.2rem;"><source src="sample1.mp3" type="audio/mpeg">Dein Browser unterstützt kein Audio.</audio>
+                    <div style="background: rgba(14, 3, 6, 0.6); padding: 1.2rem; border-radius: 8px; border-left: 3px solid var(--accent-gold);">
+                        <p style="margin: 0; font-size: 0.98rem; color: var(--text-main); font-style: italic; line-height: 1.6; font-weight: 300;">
                             „Manchmal braucht es nur einen Moment. Ein Atemzug. Ein Blick in die Ferne. Ein Duft, der Erinnerungen weckt.<br>
                             Willkommen bei Smooth Velvet Talk, wo Eleganz auf Sinnlichkeit trifft.<br>
                             Spüre die seidige Textur auf deiner Haut. Erlebe den Hauch von Luxus, der dich den ganzen Tag begleitet.<br>
                             Denn wahre Schönheit beginnt nicht mit dem, was man sieht, sondern mit dem, was man fühlt.<br>
-                            <strong>Smooth Velvet Talk – für Momente, die bleiben.</strong>“
+                            <strong style="font-style: normal; color: var(--accent-gold-light);">Smooth Velvet Talk – für Momente, die bleiben.</strong>“
                         </p>
                     </div>
                 </div>
@@ -405,7 +501,6 @@
             </div>
         </div>
 
-        <!-- Preispakete Sektion inkl. XXL Film, Funk & Fernsehen -->
         <h2 class="section-title">Leistungen & Investition</h2>
         <div class="pricing-grid">
             <div class="price-card">
@@ -445,77 +540,66 @@
             </div>
         </div>
 
-        <!-- Direktes Anfrage-Formular für individuelle Wünsche -->
+        <!-- ECHTES FORMULAR MIT AUTOMATISCHEM VERSAND AN eurodeko@web.de -->
         <div class="card">
-            <h2 class="section-title" style="margin-top:0; font-size: 1.5rem;">Individuelles Projekt anfragen</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">Hast du spezielle Wünsche? Fülle das Formular aus und sende deine Anfrage direkt per E-Mail oder WhatsApp an uns.</p>
+            <h2 class="section-title" style="margin-top:0; font-size: 1.8rem;">Individuelles Projekt anfragen</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2.5rem; font-weight: 300;">Haben Sie spezielle Wünsche? Füllen Sie das Formular aus und senden Sie Ihre Anfrage direkt per E-Mail an eurodeko@web.de oder per WhatsApp an uns.</p>
             
-            <div class="form-group">
-                <label for="clientName">Dein Name</label>
-                <input type="text" id="clientName" placeholder="Max Mustermann">
-            </div>
+            <!-- WICHTIG: Ersetze DEINE_FORM_ID mit deiner ID von formspree.io -->
+            <form action="https://formspree.io/f/DEINE_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label for="clientName">Ihr Name</label>
+                    <input type="text" id="clientName" name="Name" placeholder="Max Mustermann" required>
+                </div>
 
-            <div class="form-group">
-                <label for="serviceSelect">Gewünschtes Paket</label>
-                <select id="serviceSelect">
-                    <option value="Voice-Message (19 €)">Voice-Message (19 €)</option>
-                    <option value="Meditation / Affirmation (49 €)">Meditation / Affirmation (49 €)</option>
-                    <option value="Commercial & Creator (99 €)">Commercial & Creator (99 €)</option>
-                    <option value="XXL Film, Funk & TV (299 €)">XXL Film, Funk & TV (299 €)</option>
-                    <option value="Individuelles Projekt (Preis auf Anfrage)">Individuelles Projekt (Preis auf Anfrage)</option>
-                </select>
-            </div>
+                <div class="form-group">
+                    <label for="serviceSelect">Gewünschtes Paket</label>
+                    <select id="serviceSelect" name="Paket">
+                        <option value="Voice-Message (19 €)">Voice-Message (19 €)</option>
+                        <option value="Meditation / Affirmation (49 €)">Meditation / Affirmation (49 €)</option>
+                        <option value="Commercial & Creator (99 €)">Commercial & Creator (99 €)</option>
+                        <option value="XXL Film, Funk & TV (299 €)">XXL Film, Funk & TV (299 €)</option>
+                        <option value="Individuelles Projekt (Preis auf Anfrage)">Individuelles Projekt (Preis auf Anfrage)</option>
+                    </select>
+                </div>
 
-            <div class="form-group">
-                <label for="clientMessage">Deine Wünsche / Skript-Details / Anlass</label>
-                <textarea id="clientMessage" rows="5" placeholder="Beschreibe kurz dein Projekt, den Text oder den genauen Anlass..."></textarea>
-            </div>
+                <div class="form-group">
+                    <label for="clientMessage">Ihre Wünsche / Skript-Details / Anlass</label>
+                    <textarea id="clientMessage" name="Nachricht" rows="5" placeholder="Beschreiben Sie kurz Ihr Projekt, den Text oder den genauen Anlass..." required></textarea>
+                </div>
 
-            <div class="btn-group">
-                <button type="button" class="btn btn-email" onclick="sendEmail()">Per E-Mail anfragen</button>
-                <button type="button" class="btn btn-whatsapp" onclick="sendWhatsApp()">Per WhatsApp anfragen</button>
-            </div>
+                <div class="btn-group">
+                    <button type="submit" class="btn btn-email">Per E-Mail anfragen</button>
+                    <button type="button" class="btn btn-whatsapp" onclick="sendWhatsApp()">Per WhatsApp anfragen</button>
+                </div>
+            </form>
         </div>
 
     </div>
 
-    <!-- Footer mit allen Schnell-Links -->
     <footer>
         <div class="footer-links">
             <a href="mailto:eurodeko@web.de">📧 E-Mail: eurodeko@web.de</a>
             <a href="javascript:void(0);" onclick="sendWhatsAppQuick()">💬 WhatsApp Support</a>
-            <a href="https://www.digistore24.com" target="_blank">🛒 Digistore24 Checkout</a>
+            <a href="agb.html" target="_blank">📄 AGB</a>
+            <a href="impressum.html" target="_blank">⚖️ Impressum</a>
+            <a href="datenschutz.html" target="_blank">🔒 Datenschutz</a>
         </div>
         <p>&copy; 2026 Smooth Velvet Talk. Alle Rechte vorbehalten. | Professionelle Audio- & Voice-Over-Produktionen.</p>
     </footer>
 
     <script>
-        function getFormData() {
+        function sendWhatsApp() {
             const name = document.getElementById('clientName').value.trim();
             const service = document.getElementById('serviceSelect').value;
             const message = document.getElementById('clientMessage').value.trim();
-            return { name, service, message };
-        }
 
-        function sendEmail() {
-            const data = getFormData();
-            if (!data.name || !data.message) {
-                alert('Bitte fülle mindestens deinen Namen und deine Nachricht aus.');
-                return;
-            }
-            const subject = encodeURIComponent(`Neue Anfrage: ${data.service} von ${data.name}`);
-            const body = encodeURIComponent(`Hallo Team von Smooth Velvet Talk,\n\nIch möchte folgendes anfragen:\n\nPaket: ${data.service}\nName: ${data.name}\n\nDetails / Text:\n${data.message}`);
-            window.location.href = `mailto:eurodeko@web.de?subject=${subject}&body=${body}`;
-        }
-
-        function sendWhatsApp() {
-            const data = getFormData();
-            if (!data.name || !data.message) {
-                alert('Bitte fülle mindestens deinen Namen und deine Nachricht aus.');
+            if (!name || !message) {
+                alert('Bitte füllen Sie mindestens Ihren Namen und Ihre Nachricht aus.');
                 return;
             }
             const phone = "491700000000"; 
-            const text = encodeURIComponent(`✨ Neue Anfrage über smooth velvet talk ✨\n\n*Name:* ${data.name}\n*Paket:* ${data.service}\n*Details:* ${data.message}`);
+            const text = encodeURIComponent(`✨ Neue Anfrage über smooth velvet talk ✨\n\n*Name:* ${name}\n*Paket:* ${service}\n*Details:* ${message}`);
             window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
         }
 
